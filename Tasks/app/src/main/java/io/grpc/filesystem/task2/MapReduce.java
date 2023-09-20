@@ -66,6 +66,19 @@ public class MapReduce {
          * Save the map output in a file named "map-chunk001", for example, in folder
          * path input/temp/map
          */
+        File inputFile = new File(inputfilepath);
+        FileReader reader = new FileReader(inputFile);
+        BufferedReader bReader = new BufferedReader(reader);
+        String line;
+        String[] words;
+        Mapper[] mapped;
+        while ((line = bReader.readLine())!=null){
+            line = line.toLowerCase();
+            words = line.split("[\\p{Punct},\\s]");
+            for(String word : words){
+
+            }
+        }
 
     }
 
@@ -109,7 +122,7 @@ public class MapReduce {
 
             }
 
-            reduce(chunkpath, outputFilePath);
+//            reduce(chunkpath, outputFilePath);
 
         }
 
